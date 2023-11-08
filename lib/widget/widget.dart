@@ -79,6 +79,7 @@ Widget buildHomeScrollBar() {
           width: 12,
         ),
         CircleAvatar(
+          backgroundImage: AssetImage('asset/sale.png'),
           radius: 15,
         ),
         SizedBox(
@@ -93,6 +94,8 @@ Widget buildHomeScrollBar() {
           width: 12,
         ),
         CircleAvatar(
+          backgroundImage: NetworkImage(
+              'https://images.picxy.com/cache/2019/1/3/6993406ccf641d493dd1276bcfab77cb.jpg'),
           radius: 15,
         ),
         SizedBox(
@@ -107,6 +110,8 @@ Widget buildHomeScrollBar() {
           width: 12,
         ),
         CircleAvatar(
+          backgroundImage: NetworkImage(
+              'https://img.freepik.com/premium-photo/beautiful-asian-woman-carrying-colorful-bags-shopping-online-with-mobile-phone_8087-3877.jpg'),
           radius: 15,
         ),
         SizedBox(
@@ -121,6 +126,7 @@ Widget buildHomeScrollBar() {
           width: 12,
         ),
         CircleAvatar(
+          backgroundImage: AssetImage('asset/kids.jpg'),
           radius: 15,
         ),
         SizedBox(
@@ -135,6 +141,7 @@ Widget buildHomeScrollBar() {
           width: 12,
         ),
         CircleAvatar(
+          backgroundImage: AssetImage('asset/jewellry.jpg'),
           radius: 15,
         ),
         SizedBox(
