@@ -1,4 +1,4 @@
-import 'package:ajio_app/screen/home_screen.dart';
+import 'package:ajio_app/screen/main-screen.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeScreen(),
+      home: MainScreen(),
     );
   }
 }

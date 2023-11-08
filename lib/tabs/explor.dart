@@ -1,3 +1,4 @@
+import 'package:ajio_app/widget/widget.dart';
 import 'package:flutter/material.dart';
 
 class ExploreTab extends StatelessWidget {
@@ -6,9 +7,7 @@ class ExploreTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Explore"),
-      ),
+      body: buildAppBar(),
     );
   }
 }

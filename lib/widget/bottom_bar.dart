@@ -1,11 +1,12 @@
+// import 'package:ajio_app/screen/home_screen.dart';
 // import 'package:flutter/material.dart';
 
 // Widget buildBottomBar() {
 //   return BottomNavigationBar(
-//     currentIndex: _currendIndex,
+//     currentIndex: currendIndex,
 //     onTap: (int index) {
 //       setState(() {
-//         _currendIndex = index;
+//         currendIndex = index;
 //       });
 //     },
 //     items: [
