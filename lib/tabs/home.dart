@@ -11,64 +11,85 @@ class HomeTab extends StatefulWidget {
 
 class _HomeTabState extends State<HomeTab> {
   int activeindex = 0;
-  final carouselImage = [
+  final carouselImage1 = [
     'asset/IMG_9519.PNG',
     'asset/IMG_9520.PNG',
     'asset/IMG_9521.PNG',
     'asset/IMG_9522.PNG'
   ];
+  final carouselImage2 = ['asset/adidas.png'];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          buildAppBar(),
-          SingleChildScrollView(
-              scrollDirection: Axis.horizontal, child: buildHomeScrollBar()),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            buildAppBar(),
+            SingleChildScrollView(
+                scrollDirection: Axis.horizontal, child: buildHomeScrollBar()),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
               width: double.infinity,
               height: 40,
-              child: Center(
-                child: Text(
-                  'HURRY! LAST 2 DAYS OF SALE',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.yellow,
-                      fontSize: 20),
-                ),
+              child: Image(image: AssetImage('asset/hurry.png')),
+            ),
+            Carousel(
+                carouselImage: carouselImage1,
+                Height: 250,
+                width: double.infinity,
+                ViewportFraction: 1),
+            SizedBox(
+              height: 5,
+            ),
+            SizedBox(
+              child: Image(image: AssetImage('asset/100% genune.jpg')),
+            ),
+            bankSlider(),
+            SizedBox(
+              child: Column(
+                children: [
+                  Image(image: AssetImage('asset/top on.png')),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Image(
+                          image: AssetImage(
+                            'asset/adidas.png',
+                          ),
+                          width: 250,
+                        ),
+                        Image(
+                          image: AssetImage(
+                            'asset/crocs.png',
+                          ),
+                          width: 250,
+                        ),
+                        Image(
+                          image: AssetImage(
+                            'asset/super.png',
+                          ),
+                          width: 250,
+                        ),
+                        Image(
+                          image: AssetImage(
+                            'asset/top on.png',
+                          ),
+                          width: 250,
+                        )
+                      ],
+                    ),
+                  )
+                ],
               ),
-              color: Color.fromARGB(255, 0, 72, 90)),
-          CarouselSlider.builder(
-              itemCount: carouselImage.length,
-              itemBuilder: (context, index, realIndex) {
-                final imagePath = carouselImage[index];
-                return buildImage(imagePath, index);
-              },
-              options: CarouselOptions(
-                height: 250,
-                autoPlay: true,
-                viewportFraction: 1,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    activeindex = index;
-                  });
-                },
-              )),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
-
-  Widget buildImage(String imagepath, int index) => Container(
-        // margin: const EdgeInsets.symmetric(horizontal: 10),
-        color: Colors.grey,
-        child: Image.asset(
-          imagepath,
-          fit: BoxFit.fill,
-        ),
-      );
 }

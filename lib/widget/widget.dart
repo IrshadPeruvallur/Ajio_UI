@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 Widget buildAppBar() {
@@ -197,4 +198,73 @@ Widget buildHomeScrollBar() {
       ],
     ),
   );
+}
+
+Widget bankSlider() {
+  return SizedBox(
+    child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            Image(
+              image: AssetImage('asset/rupay.jpg'),
+              height: 50,
+            ),
+            Image(
+              image: AssetImage('asset/sbi.jpg'),
+              height: 50,
+            ),
+            Image(
+              image: AssetImage('asset/sbi2.jpg'),
+              height: 50,
+            ),
+            Image(
+              image: AssetImage('asset/au.jpg'),
+              height: 50,
+            ),
+            Image(
+              image: AssetImage('asset/idfc.jpg'),
+              height: 50,
+            ),
+            Image(
+              image: AssetImage('asset/bob.jpg'),
+              height: 50,
+            ),
+            Image(
+              image: AssetImage('asset/yes bank.jpg'),
+              height: 50,
+            )
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+Widget Carousel({
+  required carouselImage,
+  required double Height,
+  required double width,
+  required double ViewportFraction,
+}) {
+  return CarouselSlider.builder(
+      itemCount: carouselImage.length,
+      itemBuilder: (context, index, realIndex) {
+        final imagePath = carouselImage[index];
+        return Container(
+          width: width,
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.fill,
+          ),
+        );
+      },
+      options: CarouselOptions(
+        height: Height,
+        autoPlay: true,
+        viewportFraction: ViewportFraction,
+        onPageChanged: (index, reason) {},
+      ));
 }
