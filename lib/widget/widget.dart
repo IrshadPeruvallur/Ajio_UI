@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-Widget buildAppBar() {
+buildAppBar() {
   return AppBar(
     elevation: 0,
     backgroundColor: Colors.white,
@@ -267,4 +267,159 @@ Widget Carousel({
         viewportFraction: ViewportFraction,
         onPageChanged: (index, reason) {},
       ));
+}
+
+exploreImage() {
+  return Column(
+    children: [
+      Container(
+        margin: EdgeInsets.fromLTRB(8, 8, 8, 0),
+        width: double.infinity,
+        height: 160,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: 270,
+              height: 160,
+              color: Colors.black,
+              child: Image(
+                image: AssetImage('asset/a2.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),
+            Expanded(
+              child: Container(
+                color: Color.fromARGB(255, 255, 255, 255),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(6, 0, 0, 4),
+                        // color: Colors.yellow,
+                        child: Image(
+                          image: AssetImage('asset/a1.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(6, 4, 0, 0),
+                        color: const Color.fromARGB(255, 52, 51, 42),
+                        child: Image(
+                          image: AssetImage('asset/a5.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+      Container(
+        margin: EdgeInsets.fromLTRB(8, 8, 8, 0),
+        width: double.infinity,
+        height: 160,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: 120,
+              color: Color.fromARGB(255, 255, 255, 255),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 8, 4),
+                      // color: Colors.yellow,
+                      child: Image(
+                        image: AssetImage('asset/a6.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(0, 4, 8, 0),
+                      color: const Color.fromARGB(255, 52, 51, 42),
+                      child: Image(
+                        image: AssetImage('asset/a7.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Expanded(
+              child: Container(
+                width: 270,
+                height: 200,
+                color: Colors.black,
+                child: Image(
+                  image: AssetImage('asset/a9.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      Container(
+        margin: EdgeInsets.fromLTRB(8, 8, 8, 8),
+        width: double.infinity,
+        height: 160,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: 270,
+              height: 160,
+              color: Colors.black,
+              child: Image(
+                image: AssetImage('asset/a10.png'),
+                fit: BoxFit.cover,
+              ),
+            ),
+            Expanded(
+              child: Container(
+                color: Color.fromARGB(255, 255, 255, 255),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(8, 0, 0, 4),
+                        // color: Colors.yellow,
+                        child: Image(
+                          image: AssetImage('asset/a11.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(8, 4, 0, 0),
+                        color: const Color.fromARGB(255, 52, 51, 42),
+                        child: Image(
+                          image: AssetImage('asset/a12.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      )
+    ],
+  );
 }

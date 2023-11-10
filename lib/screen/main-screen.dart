@@ -47,8 +47,7 @@ class _MainScreenState extends State<MainScreen> {
             label: "TRNDin",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.category_outlined,
-                color: Color.fromARGB(200, 0, 0, 0)),
+            icon: Icon(Icons.list, color: Color.fromARGB(200, 0, 0, 0)),
             label: "Categories",
           ),
           BottomNavigationBarItem(
