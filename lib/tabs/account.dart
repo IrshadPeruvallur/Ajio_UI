@@ -33,7 +33,7 @@ class AccountTab extends StatelessWidget {
                 ),
                 Expanded(
                   child: SizedBox(
-                    height: 50, // Adjust the height as needed
+                    height: 51, // Adjust the height as needed
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
