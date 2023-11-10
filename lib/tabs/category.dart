@@ -57,6 +57,9 @@ class CategoryTab extends StatelessWidget {
       ),
       body: Column(
         children: [
+          SizedBox(
+            height: 20,
+          ),
           Expanded(
             child: GridView.builder(
               itemCount: cardImage.length,
@@ -64,10 +67,10 @@ class CategoryTab extends StatelessWidget {
                 return Card(
                   child: Container(
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(10.0),
                           child: Text(
                             cardItemName[index],
                             style: TextStyle(fontWeight: FontWeight.bold),
@@ -83,15 +86,15 @@ class CategoryTab extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  elevation: 1,
-                  color: Color.fromARGB(255, 255, 250, 248),
+                  color: Color.fromARGB(255, 240, 235, 235),
                 );
               },
+              physics: ClampingScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 5 / 3,
+                childAspectRatio: 6 / 3,
                 crossAxisSpacing: 10,
-                mainAxisSpacing: 15,
+                mainAxisSpacing: 10,
               ),
             ),
           ),

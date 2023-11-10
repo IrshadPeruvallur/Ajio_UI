@@ -1,5 +1,4 @@
 import 'package:ajio_app/widget/widget.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class HomeTab extends StatefulWidget {
