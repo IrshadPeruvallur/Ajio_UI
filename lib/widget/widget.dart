@@ -1,21 +1,29 @@
+import 'package:ajio_app/screen/notification.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-buildAppBar() {
+buildAppBar(context) {
   return AppBar(
     elevation: 0,
     backgroundColor: Colors.white,
     actions: [
-      Icon(
-        Icons.notifications_none_outlined,
-        color: Color.fromARGB(200, 0, 0, 0),
+      IconButton(
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => NotificationScreen(),
+          ));
+        },
+        icon: Icon(
+          Icons.notifications_none_outlined,
+          color: Color.fromARGB(200, 0, 0, 0),
+        ),
       ),
-      SizedBox(width: 15),
-      Icon(
-        Icons.favorite_border_outlined,
-        color: Color.fromARGB(200, 0, 0, 0),
-      ),
-      SizedBox(width: 15),
+      IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.favorite_border_outlined,
+            color: Color.fromARGB(200, 0, 0, 0),
+          )),
       Icon(
         Icons.shopping_bag_outlined,
         color: Color.fromARGB(200, 0, 0, 0),
