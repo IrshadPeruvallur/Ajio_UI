@@ -1,14 +1,16 @@
 import 'package:ajio_app/widget/widget.dart';
 import 'package:flutter/material.dart';
 
-class WishList extends StatelessWidget {
-  WishList({Key? key});
+class WishListScreen extends StatelessWidget {
+  WishListScreen({Key? key});
   final wishList = [
     buildWishlistItem(
         'asset/a4.png', 'Max', 'Men Slim Fit Polo T-Shirt', 350, 449, 22),
     buildWishlistItem(
         'asset/jewellry.jpg', 'Gold', 'Women Gold Nechalise', 35000, 45000, 12),
-    buildWishlistItem('asset/b9.png', 'Watch', 'Man Watch', 4599, 5999, 25)
+    buildWishlistItem('asset/b9.png', 'Watch', 'Man Watch', 4599, 5999, 25),
+    buildWishlistItem(
+        'asset/a4.png', 'Max', 'Men Slim Fit Polo T-Shirt', 350, 449, 22),
   ];
 
   @override
@@ -26,28 +28,35 @@ class WishList extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(3, 5, 0, 8),
-              child: Text(
-                'My Wishlist',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(3, 5, 0, 8),
+                child: Text(
+                  'My Wishlist',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-            ),
-            GridView.builder(
-              shrinkWrap: true,
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-              itemBuilder: (context, index) {
-                return wishList[index];
-              },
-            )
-          ],
+              GridView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: wishList.length,
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: 5 / 10,
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10),
+                itemBuilder: (context, index) {
+                  return wishList[index];
+                },
+              )
+            ],
+          ),
         ),
       ),
     );

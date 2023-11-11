@@ -1,3 +1,4 @@
+import 'package:ajio_app/screen/bag_screen.dart';
 import 'package:ajio_app/screen/notification_screen.dart';
 import 'package:ajio_app/screen/wish_list.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -24,18 +25,25 @@ buildAppBar(context) {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => WishList(),
+                  builder: (context) => WishListScreen(),
                 ));
           },
           icon: Icon(
             Icons.favorite_border_outlined,
             color: Color.fromARGB(200, 0, 0, 0),
           )),
-      Icon(
-        Icons.shopping_bag_outlined,
-        color: Color.fromARGB(200, 0, 0, 0),
-      ),
-      SizedBox(width: 15),
+      IconButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BagScreen(),
+                ));
+          },
+          icon: Icon(
+            Icons.shopping_bag_outlined,
+            color: Color.fromARGB(200, 0, 0, 0),
+          )),
     ],
     title: Container(
       color: Color.fromARGB(13, 0, 0, 0),
@@ -528,5 +536,84 @@ Widget wishListDetail(text1, text2, prize, mrp, off) {
         ],
       )
     ],
+  );
+}
+
+Widget bagItems(imagePath, text1, text2, prize, mrp, off, save, itemcount) {
+  return Card(
+    child: Column(
+      children: [
+        Row(
+          children: [
+            SizedBox(
+              height: 150,
+              width: 120,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image(
+                  image: AssetImage(imagePath),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(text1),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  text2,
+                  style: TextStyle(fontWeight: FontWeight.w300, fontSize: 12),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      '₹${prize}.00  ',
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                    ),
+                    Text(
+                      ' ₹${mrp}.00 ',
+                      style: TextStyle(
+                          decoration: TextDecoration.lineThrough,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w300),
+                    ),
+                    Text(
+                      '${off}%  ',
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.w300),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'You save${save}.00 ',
+                  style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            )
+          ],
+        ),
+        Divider(),
+        Text(
+          'Remove',
+          style: TextStyle(color: Colors.blue),
+        ),
+        SizedBox(
+          height: 8,
+        )
+      ],
+    ),
   );
 }
