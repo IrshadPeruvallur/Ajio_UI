@@ -1,7 +1,5 @@
 import 'package:ajio_app/screen/empty_screen.dart';
-import 'package:ajio_app/screen/notification.dart';
-import 'package:ajio_app/tabs/explor.dart';
-import 'package:ajio_app/tabs/home.dart';
+import 'package:ajio_app/screen/notification_screen.dart';
 import 'package:flutter/material.dart';
 
 class AccountTab extends StatelessWidget {
@@ -34,6 +32,7 @@ class AccountTab extends StatelessWidget {
     EmptyScreen(title: 'Who We Are'),
     EmptyScreen(title: 'Join Our Team'),
   ];
+// ...
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +65,7 @@ class AccountTab extends StatelessWidget {
                   ),
                   Expanded(
                     child: SizedBox(
-                      height: 50, // Adjust the height as needed
+                      height: 50,
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor:
@@ -87,6 +86,7 @@ class AccountTab extends StatelessWidget {
             ),
             ListView.separated(
               shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) => ListTile(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(

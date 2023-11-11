@@ -1,4 +1,5 @@
-import 'package:ajio_app/screen/notification.dart';
+import 'package:ajio_app/screen/notification_screen.dart';
+import 'package:ajio_app/screen/wish_list.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,13 @@ buildAppBar(context) {
         ),
       ),
       IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => WishList(),
+                ));
+          },
           icon: Icon(
             Icons.favorite_border_outlined,
             color: Color.fromARGB(200, 0, 0, 0),
@@ -103,8 +110,7 @@ Widget buildHomeScrollBar() {
           width: 12,
         ),
         CircleAvatar(
-          backgroundImage: NetworkImage(
-              'https://images.picxy.com/cache/2019/1/3/6993406ccf641d493dd1276bcfab77cb.jpg'),
+          backgroundImage: AssetImage('asset/b7.png'),
           radius: 15,
         ),
         SizedBox(
@@ -119,8 +125,7 @@ Widget buildHomeScrollBar() {
           width: 12,
         ),
         CircleAvatar(
-          backgroundImage: NetworkImage(
-              'https://img.freepik.com/premium-photo/beautiful-asian-woman-carrying-colorful-bags-shopping-online-with-mobile-phone_8087-3877.jpg'),
+          backgroundImage: AssetImage('asset/a1.jpg'),
           radius: 15,
         ),
         SizedBox(
@@ -427,6 +432,100 @@ exploreImage() {
             )
           ],
         ),
+      )
+    ],
+  );
+}
+
+Widget buildWishlistItem(String imagePath, text1, text2, prize, mrp, off) {
+  return Column(
+    children: [
+      Container(
+        // margin: EdgeInsets.symmetric(horizontal: 5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        width: 170,
+        height: 220,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Image(
+            image: AssetImage(imagePath),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+      SizedBox(
+        height: 10,
+      ),
+      wishListDetail(text1, text2, prize, mrp, off)
+    ],
+  );
+}
+
+Widget wishListDetail(text1, text2, prize, mrp, off) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(text1),
+      SizedBox(
+        height: 5,
+      ),
+      Text(
+        text2,
+        style: TextStyle(fontWeight: FontWeight.w300),
+      ),
+      SizedBox(
+        height: 5,
+      ),
+      Row(
+        children: [
+          Text(
+            '₹${prize} ',
+            style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+          ),
+          Text(
+            '₹${mrp} ',
+            style: TextStyle(
+                decoration: TextDecoration.lineThrough,
+                fontSize: 13,
+                fontWeight: FontWeight.w300),
+          ),
+          Text(
+            '${off}% off ',
+            style: TextStyle(
+                color: Colors.green, fontSize: 13, fontWeight: FontWeight.w600),
+          ),
+        ],
+      ),
+      SizedBox(
+        height: 5,
+      ),
+      Row(
+        children: [
+          Container(
+            width: 35,
+            height: 35,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(7),
+              border: Border.all(color: Colors.black),
+            ),
+            child: Icon(Icons.delete_outline_rounded),
+          ),
+          SizedBox(
+            width: 5,
+          ),
+          ElevatedButton.icon(
+              style: ButtonStyle(
+                  shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(7))),
+                  backgroundColor: MaterialStatePropertyAll(Colors.black)),
+              onPressed: () {},
+              icon: Icon(
+                Icons.shopping_bag_outlined,
+              ),
+              label: Text("Add To Bag"))
+        ],
       )
     ],
   );
