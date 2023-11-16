@@ -36,7 +36,7 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon:
                 Icon(Icons.view_comfy_alt, color: Color.fromARGB(200, 0, 0, 0)),
-            label: "Switch Stores",
+            label: "Home",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.store, color: Color.fromARGB(200, 0, 0, 0)),

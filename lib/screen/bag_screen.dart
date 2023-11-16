@@ -106,7 +106,8 @@ class BagScreen extends StatelessWidget {
                             Text('Fulfiment Fee',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w300, fontSize: 11)),
-                            Text('Order Total'),
+                            Text('Order Total',
+                                style: TextStyle(fontWeight: FontWeight.w600)),
                           ],
                         ),
                       ),
@@ -114,10 +115,22 @@ class BagScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Text('data'),
-                            Text('datadsasf'),
-                            Text('data'),
-                            Text('data'),
+                            Text('₹1148.00',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w300, fontSize: 11)),
+                            Text('₹99.00',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w300, fontSize: 11)),
+                            Text('₹99.00',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w300, fontSize: 11)),
+                            Text('₹29.00',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w300, fontSize: 11)),
+                            Text(
+                              '₹8049.00',
+                              style: TextStyle(fontWeight: FontWeight.w600),
+                            ),
                           ],
                         ),
                       )

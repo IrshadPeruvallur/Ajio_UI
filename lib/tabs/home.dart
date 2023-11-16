@@ -87,7 +87,76 @@ class _HomeTabState extends State<HomeTab> {
                       carouselImage: carouselImage2,
                       Height: 250,
                       width: double.infinity,
-                      ViewportFraction: 1)
+                      ViewportFraction: 1),
+                  Image(image: AssetImage('asset/top daz.jpg')),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Image(
+                          image: AssetImage(
+                            'asset/t1.avif',
+                          ),
+                          width: 250,
+                        ),
+                        Image(
+                          image: AssetImage(
+                            'asset/t2.avif',
+                          ),
+                          width: 250,
+                        ),
+                        Image(
+                          image: AssetImage(
+                            'asset/t3.avif',
+                          ),
+                          width: 250,
+                        ),
+                        Image(
+                          image: AssetImage(
+                            'asset/t4.avif',
+                          ),
+                          width: 250,
+                        ),
+                      ],
+                    ),
+                  ),
+                  // Image(image: AssetImage('asset/t11.avif')),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Image(
+                          image: AssetImage(
+                            'asset/t5.avif',
+                          ),
+                          width: 250,
+                        ),
+                        Image(
+                          image: AssetImage(
+                            'asset/t6.avif',
+                          ),
+                          width: 250,
+                        ),
+                        Image(
+                          image: AssetImage(
+                            'asset/t7.avif',
+                          ),
+                          width: 250,
+                        ),
+                        Image(
+                          image: AssetImage(
+                            'asset/t8.avif',
+                          ),
+                          width: 250,
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Image(image: AssetImage('asset/t12.avif')),
+                  Image(image: AssetImage('asset/t13.webp')),
                 ],
               ),
             ),
