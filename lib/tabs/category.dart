@@ -70,15 +70,31 @@ class CategoryTab extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                            cardItemName[index],
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                              cardItemName[index],
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: MediaQuery.of(context).size.width >
+                                        600
+                                    ? 20
+                                    : MediaQuery.of(context).size.width > 300
+                                        ? 14
+                                        : MediaQuery.of(context).size.width >
+                                                250
+                                            ? 8
+                                            : 2,
+                              ),
+                            )),
                         Image(
                           image: AssetImage(cardImage[index]),
-                          height: 80,
+                          height: MediaQuery.of(context).size.width > 600
+                              ? 200
+                              : MediaQuery.of(context).size.width > 400
+                                  ? 100
+                                  : MediaQuery.of(context).size.width > 200
+                                      ? 50
+                                      : 0,
                         )
                       ],
                     ),
@@ -99,7 +115,9 @@ class CategoryTab extends StatelessWidget {
             ),
           ),
           Image(
-            image: AssetImage('asset/c11.PNG'),
+            image: MediaQuery.of(context).size.width > 600
+                ? AssetImage('asset/c11.PNG')
+                : AssetImage('asset/c11.PNG'),
           ),
         ],
       ),

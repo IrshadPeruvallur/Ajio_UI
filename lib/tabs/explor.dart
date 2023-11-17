@@ -23,6 +23,8 @@ class ExploreTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: buildAppBar(context),
       body: SingleChildScrollView(
@@ -32,41 +34,42 @@ class ExploreTab extends StatelessWidget {
             Image(image: AssetImage('asset/fasion.PNG')),
             Carousel(
               carouselImage: slideImage,
-              Height: 300,
+              Height: screenSize.width * 0.8,
               width: double.infinity,
               ViewportFraction: 1,
             ),
             exploreImage(),
             Carousel(
               carouselImage: slideImage2,
-              Height: 130,
+              Height: screenSize.width * 0.35,
               width: double.infinity,
               ViewportFraction: 1,
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+              padding: EdgeInsets.fromLTRB(screenSize.width * 0.03,
+                  screenSize.width * 0.03, screenSize.width * 0.03, 0),
               child: Image(image: AssetImage('asset/b1.PNG')),
             ),
             Carousel(
               carouselImage: slideImage3,
-              Height: 250,
+              Height: screenSize.width * 0.6,
               width: double.infinity,
               ViewportFraction: 1,
             ),
             Image(image: AssetImage('asset/b5.PNG')),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(screenSize.width * 0.03),
               child: GridView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
+                  crossAxisCount: screenSize.width > 600 ? 5 : 3,
                   childAspectRatio: 3 / 4,
                 ),
                 itemCount: 6,
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.all(12),
+                    margin: EdgeInsets.all(screenSize.width * 0.03),
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(gridImage[index]),

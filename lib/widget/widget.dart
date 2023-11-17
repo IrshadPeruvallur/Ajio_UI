@@ -5,6 +5,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 buildAppBar(context) {
+  var screenSize = MediaQuery.of(context).size;
+
   return AppBar(
     elevation: 0,
     backgroundColor: Colors.white,
@@ -21,29 +23,33 @@ buildAppBar(context) {
         ),
       ),
       IconButton(
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => WishListScreen(),
-                ));
-          },
-          icon: Icon(
-            Icons.favorite_border_outlined,
-            color: Color.fromARGB(200, 0, 0, 0),
-          )),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => WishListScreen(),
+            ),
+          );
+        },
+        icon: Icon(
+          Icons.favorite_border_outlined,
+          color: Color.fromARGB(200, 0, 0, 0),
+        ),
+      ),
       IconButton(
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => BagScreen(),
-                ));
-          },
-          icon: Icon(
-            Icons.shopping_bag_outlined,
-            color: Color.fromARGB(200, 0, 0, 0),
-          )),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => BagScreen(),
+            ),
+          );
+        },
+        icon: Icon(
+          Icons.shopping_bag_outlined,
+          color: Color.fromARGB(200, 0, 0, 0),
+        ),
+      ),
     ],
     title: Container(
       color: Color.fromARGB(13, 0, 0, 0),
@@ -54,11 +60,13 @@ buildAppBar(context) {
           ),
           Image(
             image: AssetImage('asset/com.ril.ajio_1.png'),
-            width: 35,
-            height: 35,
+            width: screenSize.width * 0.08, // Adjust as needed
+            height: screenSize.width * 0.08, // Adjust as needed
           ),
           SizedBox(
-              width: 8), // Add some space between the icon and the TextField
+            width: screenSize.width *
+                0.02, // Add some space between the icon and the TextField
+          ),
           Expanded(
             child: TextField(
               decoration: InputDecoration(
@@ -72,8 +80,9 @@ buildAppBar(context) {
             color: Colors.black,
           ),
           SizedBox(
-            width: 8,
-          )
+            width:
+                screenSize.width * 0.02, // Add some space after the TextField
+          ),
         ],
       ),
     ),
@@ -82,6 +91,7 @@ buildAppBar(context) {
 
 Widget buildHomeScrollBar() {
   return Container(
+    // width: double.infinity,
     height: 50,
     decoration: BoxDecoration(
       color: Colors.white,
@@ -212,6 +222,96 @@ Widget buildHomeScrollBar() {
           width: 5,
         ),
         Text("Home",
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 15,
+                fontWeight: FontWeight.w400)),
+        SizedBox(
+          width: 12,
+        ),
+        CircleAvatar(
+          backgroundImage: AssetImage('asset/sale.png'),
+          radius: 15,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        Text("Sale",
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 15,
+                fontWeight: FontWeight.w400)),
+        SizedBox(
+          width: 12,
+        ),
+        CircleAvatar(
+          backgroundImage: AssetImage('asset/b7.png'),
+          radius: 15,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        Text("Men",
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 15,
+                fontWeight: FontWeight.w400)),
+        SizedBox(
+          width: 12,
+        ),
+        CircleAvatar(
+          backgroundImage: AssetImage('asset/a1.jpg'),
+          radius: 15,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        Text("Women",
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 15,
+                fontWeight: FontWeight.w400)),
+        SizedBox(
+          width: 12,
+        ),
+        CircleAvatar(
+          backgroundImage: AssetImage('asset/sale.png'),
+          radius: 15,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        Text("Sale",
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 15,
+                fontWeight: FontWeight.w400)),
+        SizedBox(
+          width: 12,
+        ),
+        CircleAvatar(
+          backgroundImage: AssetImage('asset/b7.png'),
+          radius: 15,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        Text("Men",
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 15,
+                fontWeight: FontWeight.w400)),
+        SizedBox(
+          width: 12,
+        ),
+        CircleAvatar(
+          backgroundImage: AssetImage('asset/a1.jpg'),
+          radius: 15,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        Text("Women",
             style: TextStyle(
                 color: Colors.black,
                 fontSize: 15,

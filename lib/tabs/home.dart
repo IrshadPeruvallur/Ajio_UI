@@ -24,6 +24,8 @@ class _HomeTabState extends State<HomeTab> {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: buildAppBar(context),
       body: Column(
@@ -38,13 +40,17 @@ class _HomeTabState extends State<HomeTab> {
                   SizedBox(
                     width: double.infinity,
                     height: 40,
-                    child: Image(image: AssetImage('asset/hurry.png')),
+                    child: Image(
+                      image: AssetImage('asset/hurry.png'),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   Carousel(
-                      carouselImage: carouselImage1,
-                      Height: 250,
-                      width: double.infinity,
-                      ViewportFraction: 1),
+                    carouselImage: carouselImage1,
+                    Height: screenSize.width * 0.6,
+                    width: double.infinity,
+                    ViewportFraction: 1,
+                  ),
                   SizedBox(
                     height: 5,
                   ),
@@ -59,35 +65,36 @@ class _HomeTabState extends State<HomeTab> {
                           image: AssetImage(
                             'asset/adidas.png',
                           ),
-                          width: 250,
+                          width: screenSize.width * 0.5,
                         ),
                         Image(
                           image: AssetImage(
                             'asset/crocs.png',
                           ),
-                          width: 250,
+                          width: screenSize.width * 0.5,
                         ),
                         Image(
                           image: AssetImage(
                             'asset/super.png',
                           ),
-                          width: 250,
+                          width: screenSize.width * 0.5,
                         ),
                         Image(
                           image: AssetImage(
                             'asset/levis.png',
                           ),
-                          width: 250,
-                        )
+                          width: screenSize.width * 0.5,
+                        ),
                       ],
                     ),
                   ),
                   Image(image: AssetImage('asset/unheard.jpg')),
                   Carousel(
-                      carouselImage: carouselImage2,
-                      Height: 250,
-                      width: double.infinity,
-                      ViewportFraction: 1),
+                    carouselImage: carouselImage2,
+                    Height: screenSize.width * 0.6,
+                    width: double.infinity,
+                    ViewportFraction: 1,
+                  ),
                   Image(image: AssetImage('asset/top daz.jpg')),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -97,30 +104,29 @@ class _HomeTabState extends State<HomeTab> {
                           image: AssetImage(
                             'asset/t1.avif',
                           ),
-                          width: 250,
+                          width: screenSize.width * 0.5,
                         ),
                         Image(
                           image: AssetImage(
                             'asset/t2.avif',
                           ),
-                          width: 250,
+                          width: screenSize.width * 0.5,
                         ),
                         Image(
                           image: AssetImage(
                             'asset/t3.avif',
                           ),
-                          width: 250,
+                          width: screenSize.width * 0.5,
                         ),
                         Image(
                           image: AssetImage(
                             'asset/t4.avif',
                           ),
-                          width: 250,
+                          width: screenSize.width * 0.5,
                         ),
                       ],
                     ),
                   ),
-                  // Image(image: AssetImage('asset/t11.avif')),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
@@ -129,26 +135,26 @@ class _HomeTabState extends State<HomeTab> {
                           image: AssetImage(
                             'asset/t5.avif',
                           ),
-                          width: 250,
+                          width: screenSize.width * 0.5,
                         ),
                         Image(
                           image: AssetImage(
                             'asset/t6.avif',
                           ),
-                          width: 250,
+                          width: screenSize.width * 0.5,
                         ),
                         Image(
                           image: AssetImage(
                             'asset/t7.avif',
                           ),
-                          width: 250,
+                          width: screenSize.width * 0.5,
                         ),
                         Image(
                           image: AssetImage(
                             'asset/t8.avif',
                           ),
-                          width: 250,
-                        )
+                          width: screenSize.width * 0.5,
+                        ),
                       ],
                     ),
                   ),
